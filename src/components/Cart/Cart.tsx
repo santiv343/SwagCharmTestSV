@@ -13,7 +13,7 @@ const Cart: any = ({ total, products, removeItem, editQuantity }: any) => {
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(4, 1fr)",
-        gap: 1,
+        gap: 2,
         gridTemplateRows: "auto",
         gridTemplateAreas: `"cartItems cartItems cartItems checkoutCTA"
                             "featuredProducts featuredProducts featuredProducts featuredProducts"`,

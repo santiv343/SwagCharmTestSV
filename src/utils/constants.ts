@@ -9,6 +9,8 @@ export const buttonNames = [
 
 export const initialProducts = [
   {
+    isPack: true,
+    img: "/img/products.jpg",
     id: 1,
     stockAvaliable: 80,
     title: "My Christmas Pack",
@@ -23,6 +25,8 @@ export const initialProducts = [
     ],
   },
   {
+    isPack: false,
+    img: "/img/products.jpg",
     id: 2,
     stockAvaliable: 20,
     title: "Basic T-shirt",
@@ -31,6 +35,8 @@ export const initialProducts = [
     details: null,
   },
   {
+    isPack: false,
+    img: "/img/products.jpg",
     id: 3,
     stockAvaliable: 20,
     title: "Woman bottle",

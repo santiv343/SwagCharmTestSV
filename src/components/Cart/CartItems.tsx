@@ -10,10 +10,18 @@ export default function CartItems({
 }: any) {
   return (
     <Box
-      sx={{ display: "flex", flexDirection: "column", gridArea: "cartItems" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gridArea: "cartItems",
+        mt: 4,
+      }}
     >
-      <Typography>Your Cart {`(${productCount})`}</Typography>
-      <Box>
+      <Typography variant="h6">
+        <b>Your Cart </b>
+        {`(${productCount})`}
+      </Typography>
+      <Box sx={{ display: "flex", flexDirection: "column"}}>
         {products.map((product: any) => (
           <CartCard
             product={product}
