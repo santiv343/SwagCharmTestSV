@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { Container } from "@mui/material";
 import SearchAppBar from "./components/Navigation/SearchAppBar";
@@ -8,7 +8,7 @@ import useStore from "./utils/hooks/useStore";
 import { buttonNames } from "./utils/constants";
 
 function App() {
-  const { editQuantity, removeItem, items, setItems } = useStore();
+  const { editQuantity, removeItem, items} = useStore();
 
   return (
     <>
@@ -17,7 +17,6 @@ function App() {
       <Container>
         <Cart
           products={items}
-          setProducts={setItems}
           removeItem={removeItem}
           editQuantity={editQuantity}
         />

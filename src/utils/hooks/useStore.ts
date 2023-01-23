@@ -4,22 +4,42 @@ import { initialProducts } from "../constants";
 const useStore = () => {
   const [items, setItems] = useState(initialProducts);
 
-  const removeItem = (item: any) => {
-    const actualProduct = items.find(item);
+  const removeItem = (id: any) => {
+    const actualProduct = items.find((item) => item.id === id);
 
-    if (actualProduct) setItems(items.filter((item) => actualProduct !== item));
+    if (actualProduct)
+      setItems(items.filter((item) => actualProduct.id !== item.id));
   };
 
-  const editQuantity = (item: any, quantity: any) => {
-    const actualProduct = items.findIndex(item);
-    if (actualProduct !== -1)
-      setItems([...items, (items[actualProduct].quantity = quantity)]);
+  const editQuantity = (id: any, quantity: any) => {
+    const editedItems = items.map((item) => {
+      if (id === item.id) {
+        item.quantity = quantity;
+      }
+      return item;
+    });
+
+    setItems(editedItems);
+
+    // const actualProductIndex = items.findIndex((item) => item.id === id);
+
+    // console.log({ actualProductIndex });
+
+    // if (actualProductIndex !== -1) {
+
+    //   const editedProduct = {
+    //     ...items[actualProductIndex],
+    //     quantity: quantity,
+    //     stockAvaliable: items[actualProductIndex].stockAvaliable - quantity,
+    //   };
+
+    //   setItems([...items, (items[actualProductIndex] = editedProduct)]);
+    // }
   };
 
   return {
     editQuantity,
     removeItem,
-    setItems,
     items,
   };
 };

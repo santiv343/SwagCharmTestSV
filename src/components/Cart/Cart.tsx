@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import CartCard from "./CartCards";
+import CartCard from "./CartCard";
 
 const Cart: any = ({
   products,
@@ -14,8 +14,7 @@ const Cart: any = ({
       <Box>
         {products.map((product: any) => (
           <CartCard
-            {...product}
-            setProducts={setProducts}
+            product={product}
             removeItem={removeItem}
             editQuantity={editQuantity}
           />
