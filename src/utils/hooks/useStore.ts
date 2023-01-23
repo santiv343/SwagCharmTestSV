@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { getTotalPrice } from "../cartHelpers";
 import { initialProducts } from "../constants";
 
 const useStore = () => {
   const [items, setItems] = useState(initialProducts);
+  const [total, setTotal] = useState(getTotalPrice(items));
+
+  useEffect(() => {
+    setTotal(getTotalPrice(items));
+  }, [items]);
 
   const removeItem = (id: any) => {
     const actualProduct = items.find((item) => item.id === id);
@@ -41,6 +47,7 @@ const useStore = () => {
     editQuantity,
     removeItem,
     items,
+    total,
   };
 };
 

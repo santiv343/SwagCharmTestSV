@@ -8,7 +8,7 @@ import useStore from "./utils/hooks/useStore";
 import { buttonNames } from "./utils/constants";
 
 function App() {
-  const { editQuantity, removeItem, items} = useStore();
+  const { editQuantity, removeItem, items, total } = useStore();
 
   return (
     <>
@@ -16,6 +16,7 @@ function App() {
       <ButtonBar buttonNames={buttonNames} />
       <Container>
         <Cart
+          total={total}
           products={items}
           removeItem={removeItem}
           editQuantity={editQuantity}
