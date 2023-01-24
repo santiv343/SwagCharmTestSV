@@ -8,9 +8,12 @@ const FeaturedProducts = ({ products }: any) => {
       <Box
         sx={{
           gridArea: "featuredProducts",
+          mt: 8,
         }}
       >
-        <Typography>You might also like</Typography>
+        <Typography sx={{ fontWeight: "bold", mb: 2 }} variant="h6">
+          You might also like
+        </Typography>
         <Box
           sx={{
             display: "grid",

@@ -1,10 +1,11 @@
 import { DeleteForeverOutlined, Image } from "@mui/icons-material";
 import { Box, Button, NativeSelect, Typography } from "@mui/material";
 import React from "react";
-import { getStockOptions } from "../../utils/cartHelpers";
+import { getStockOptions, renderDetails } from "../../utils/cartHelpers";
 
 const CartCard = ({ product, removeItem, editQuantity }: any) => {
-  const { title, price, quantity, details, id, stockAvaliable, img } = product;
+  const { title, price, quantity, details, id, stockAvaliable, img, isPack } =
+    product;
 
   console.log({ img });
 
@@ -21,12 +22,28 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           width: "15%",
           aspectRatio: "1/1",
           maxWidth: 120,
         }}
       >
         <img src={img} style={{ width: "100%", objectFit: "cover" }} />
+        {isPack ? (
+          <Box
+            sx={{
+              bgcolor: "secondary.main",
+              width: "fit-content",
+              textAlign: "center",
+              mt: 1,
+            }}
+          >
+            <Typography sx={{ fontSize: 10, p: "4px", color: "#848A92" }}>
+              PACK
+            </Typography>
+          </Box>
+        ) : null}
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
         <Box
@@ -66,7 +83,7 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
           </Box>
           <Typography>Total: $ {(price * quantity).toFixed(2)}</Typography>
         </Box>
-        {/* <Typography>{details}</Typography> */}
+        {isPack ? <Typography>{renderDetails(details)}</Typography> : null}
         <Box
           sx={{
             display: "flex",
@@ -74,6 +91,22 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
             alignItems: "center",
           }}
         >
+          {isPack ? (
+            <Button
+              sx={{
+                textTransform: "none",
+                fontWeight: "bold",
+                fontSize: 12,
+                mt: 1,
+                py: "2px",
+                px: 2,
+                borderRight: 1,
+                borderRadius: 0,
+              }}
+            >
+              Edit pack
+            </Button>
+          ) : null}
           <Button
             onClick={() => removeItem(id)}
             startIcon={<DeleteForeverOutlined />}
@@ -82,6 +115,8 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
               fontWeight: "bold",
               fontSize: 12,
               mt: 1,
+              py: "2px",
+              px: 2,
             }}
           >
             Remove

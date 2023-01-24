@@ -17,11 +17,9 @@ export const initialProducts = [
     quantity: 50,
     price: 71.2,
     details: [
-      {
-        "Cardboard box": "container",
-        "Unisex Short Sleeve T-Shirt": "Green",
-        "Basic bottle": "blue",
-      },
+      { "Cardboard box": "container" },
+      { "Unisex Short Sleeve T-Shirt": "Green" },
+      { "Basic bottle": "blue" },
     ],
   },
   {
