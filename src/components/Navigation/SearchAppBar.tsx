@@ -68,7 +68,7 @@ export default function SearchAppBar() {
               sx={{
                 display: "flex",
                 justifyContent: "flex-start",
-                width: "100%",
+                width: "70%",
                 ml: 6,
               }}
             >

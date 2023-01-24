@@ -7,7 +7,12 @@ const FeaturedProduct = ({ product }: any) => {
   return (
     <Box>
       <Box
-        sx={{ bgcolor: "secondary.main", width: "100%", aspectRatio: "1/1" }}
+        sx={{
+          bgcolor: "secondary.main",
+          width: "100%",
+          aspectRatio: "1/1",
+          mb: 1,
+        }}
       ></Box>
       <Typography sx={{ fontWeight: "bold" }}>{title}</Typography>
       <Box

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 
 const InfoColumn = ({ title, links }: any) => {
   return (
@@ -8,7 +8,9 @@ const InfoColumn = ({ title, links }: any) => {
         {title}
       </Typography>
       {links.map((link: any) => (
-        <Typography>{link}</Typography>
+        <Link underline="none" href="/">
+          <Typography>{link}</Typography>
+        </Link>
       ))}
     </Box>
   );
