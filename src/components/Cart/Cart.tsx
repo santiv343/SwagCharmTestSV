@@ -4,9 +4,10 @@ import CartItems from "./CartItems";
 import CheckoutCTA from "./CheckoutCTA";
 import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
 import { featuredProducts } from "../../utils/constants";
+import { StorePropsType } from "../../utils/hooks/useStore";
 
-const Cart: any = ({ total, products, removeItem, editQuantity }: any) => {
-  const productCount = products.length;
+const Cart = ({ total, items, removeItem, editQuantity }: StorePropsType) => {
+  const productCount = items.length;
 
   return (
     <Box
@@ -20,7 +21,7 @@ const Cart: any = ({ total, products, removeItem, editQuantity }: any) => {
       }}
     >
       <CartItems
-        products={products}
+        items={items}
         removeItem={removeItem}
         editQuantity={editQuantity}
         productCount={productCount}

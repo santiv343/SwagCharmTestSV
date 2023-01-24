@@ -18,7 +18,7 @@ function App() {
       <Container>
         <Cart
           total={total}
-          products={items}
+          items={items}
           removeItem={removeItem}
           editQuantity={editQuantity}
         />

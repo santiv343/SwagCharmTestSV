@@ -1,7 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-const FeaturedProduct = ({ product }: any) => {
+const FeaturedProduct = ({
+  product,
+}: {
+  product: { title: string; priceRange: string; minimum: number };
+}) => {
   const { title, priceRange, minimum } = product;
 
   return (

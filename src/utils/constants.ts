@@ -1,4 +1,4 @@
-export const buttonNames = [
+export const buttonNames : string[] = [
   "All products",
   "Packaging",
   "Drinkware",
@@ -7,7 +7,20 @@ export const buttonNames = [
   "Backpacks",
 ];
 
-export const initialProducts = [
+export type ProductType = {
+  isPack: boolean;
+  img: string;
+  id: number;
+  stockAvaliable: number;
+  title: string;
+  quantity: number;
+  price: number;
+  details: any;
+};
+
+export type ProductsType = ProductType[];
+
+export const initialProducts: ProductsType = [
   {
     isPack: true,
     img: "/img/products.jpg",
@@ -44,7 +57,11 @@ export const initialProducts = [
   },
 ];
 
-export const featuredProducts = [
+export const featuredProducts: {
+  title: string;
+  priceRange: string;
+  minimum: number;
+}[] = [
   {
     title: "Unisex Short Sleeve T-Shirt",
     priceRange: "$10 - $24",
@@ -67,7 +84,7 @@ export const featuredProducts = [
   },
 ];
 
-export const infoColumns = [
+export const infoColumns: { title: string; links: string[] }[] = [
   {
     title: "Our company",
     links: ["About us", "FAQ", "Partnerships", "Sustainability", "Blog"],

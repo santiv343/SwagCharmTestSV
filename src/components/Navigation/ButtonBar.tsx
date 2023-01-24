@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Container, Box } from "@mui/material";
 
-const ButtonBar = ({ buttonNames }: any) => {
+const ButtonBar = ({ buttonNames }: { buttonNames: string[] }) => {
   return (
     <Box sx={{ bgcolor: "secondary.main" }}>
       <Container>
-        {buttonNames.map((text: any, index: number) => (
+        {buttonNames.map((text, index: number) => (
           <Button
             key={"barButton" + index}
             variant="text"

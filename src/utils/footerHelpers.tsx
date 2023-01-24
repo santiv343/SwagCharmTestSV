@@ -29,7 +29,7 @@ export const getSocialMediaIconsWithBg = () => {
 };
 
 export const getInfoColumns = () => {
-  return infoColumns.map(({ title, links }: any) => (
+  return infoColumns.map(({ title, links }) => (
     <InfoColumn title={title} links={links} />
   ));
 };

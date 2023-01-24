@@ -2,8 +2,14 @@ import { DeleteForeverOutlined } from "@mui/icons-material";
 import { Box, Button, NativeSelect, Typography } from "@mui/material";
 import React from "react";
 import { getStockOptions, renderDetails } from "../../utils/cartHelpers";
+import { ProductType } from "../../utils/constants";
+import { StorePropsType } from "../../utils/hooks/useStore";
 
-const CartCard = ({ product, removeItem, editQuantity }: any) => {
+const CartCard = ({
+  product,
+  removeItem,
+  editQuantity,
+}: Omit<StorePropsType, "total" | "items"> & { product: ProductType }) => {
   const { title, price, quantity, details, id, stockAvaliable, img, isPack } =
     product;
 
@@ -76,7 +82,7 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
             <NativeSelect
               sx={{ fontWeight: "bold" }}
               defaultValue={quantity}
-              onChange={(e) => editQuantity(id, e.target.value)}
+              onChange={(e) => editQuantity(id, Number(e.target.value))}
               inputProps={{
                 name: "quantity",
                 id: "uncontrolled-native",

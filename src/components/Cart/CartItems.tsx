@@ -1,13 +1,14 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import CartCard from "./CartCard";
+import { StorePropsType } from "../../utils/hooks/useStore";
 
 export default function CartItems({
-  products,
+  items,
   removeItem,
   editQuantity,
   productCount,
-}: any) {
+}: Omit<StorePropsType, "total"> & { productCount: number }) {
   return (
     <Box
       sx={{
@@ -22,7 +23,7 @@ export default function CartItems({
         {`(${productCount})`}
       </Typography>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        {products.map((product: any, index: number) => (
+        {items.map((product, index: number) => (
           <CartCard
             key={"cartCard" + index}
             product={product}

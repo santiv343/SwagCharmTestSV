@@ -1,7 +1,8 @@
 import { Box, List, ListItem, Typography } from "@mui/material";
 import React from "react";
+import { ProductsType } from "./constants";
 
-export const getStockOptions = (stockAvaliable: any) => {
+export const getStockOptions = (stockAvaliable: number) => {
   let options: any = [];
   for (let i = 1; i <= stockAvaliable; i++) {
     options.push(<option value={i}>{i}</option>);
@@ -9,14 +10,14 @@ export const getStockOptions = (stockAvaliable: any) => {
   return options;
 };
 
-export const getTotalPrice = (items: any) => {
-  return items.reduce((acc: any, item: any) => {
+export const getTotalPrice = (items: ProductsType) => {
+  return items.reduce((acc, item) => {
     return acc + item.quantity * item.price;
   }, 0);
 };
 
-export const renderDetails = (details: any) => {
-  const detailsList = details.map((detail: any) => {
+export const renderDetails = (details: string[]) => {
+  const detailsList = details.map((detail) => {
     const propName = Object.getOwnPropertyNames(detail)[0];
     return (
       <ListItem sx={{ p: 0 }}>
