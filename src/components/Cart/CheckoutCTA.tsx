@@ -1,5 +1,4 @@
 import { Box, Button, Typography } from "@mui/material";
-import { borderBottom, borderBottomColor } from "@mui/system";
 import React from "react";
 
 const CheckoutCTA = ({ productCount, total }: any) => {
@@ -40,7 +39,7 @@ const CheckoutCTA = ({ productCount, total }: any) => {
       >
         <Typography sx={{ fontWeight: "600" }}>Total:</Typography>
         <Typography sx={{ fontSize: 24 }}>
-          <b>${total.toFixed(2)}</b>
+          <b>${total.toLocaleString("en-US",{minimumFractionDigits: 2})}</b>
         </Typography>
       </Box>
       <Button sx={{ textTransform: "none" }} variant="contained">

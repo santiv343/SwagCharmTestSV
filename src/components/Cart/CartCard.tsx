@@ -1,4 +1,4 @@
-import { DeleteForeverOutlined, Image } from "@mui/icons-material";
+import { DeleteForeverOutlined } from "@mui/icons-material";
 import { Box, Button, NativeSelect, Typography } from "@mui/material";
 import React from "react";
 import { getStockOptions, renderDetails } from "../../utils/cartHelpers";
@@ -6,8 +6,6 @@ import { getStockOptions, renderDetails } from "../../utils/cartHelpers";
 const CartCard = ({ product, removeItem, editQuantity }: any) => {
   const { title, price, quantity, details, id, stockAvaliable, img, isPack } =
     product;
-
-  console.log({ img });
 
   return (
     <Box
@@ -29,7 +27,11 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
           maxWidth: 120,
         }}
       >
-        <img src={img} style={{ width: "100%", objectFit: "cover" }} />
+        <img
+          src={img}
+          style={{ width: "100%", objectFit: "cover" }}
+          alt="product"
+        />
         {isPack ? (
           <Box
             sx={{
@@ -56,7 +58,9 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
           <Typography variant="h6">
             <b>{title}</b>
           </Typography>
-          <Typography>$ {price.toFixed(2)}</Typography>
+          <Typography sx={{ fontWeight: "bold" }}>
+            $ {price.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -81,7 +85,12 @@ const CartCard = ({ product, removeItem, editQuantity }: any) => {
               {getStockOptions(stockAvaliable)}
             </NativeSelect>
           </Box>
-          <Typography>Total: $ {(price * quantity).toFixed(2)}</Typography>
+          <Typography sx={{ fontWeight: "bold" }}>
+            Total: ${" "}
+            {(price * quantity).toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+            })}
+          </Typography>
         </Box>
         {isPack ? <Typography>{renderDetails(details)}</Typography> : null}
         <Box

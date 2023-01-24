@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -8,7 +8,7 @@ import InputBase from "@mui/material/InputBase";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Person2Outlined } from "@mui/icons-material";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import { Container, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -51,24 +51,26 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 0 }}>
       <AppBar position="static">
         <Container>
           <Toolbar
             sx={{
               display: "flex",
               justifyContent: "space-between",
+              p: { md: 0, lg: 0 },
             }}
           >
             <Box
               sx={{
                 bgcolor: "secondary.200",
                 color: "#848A92",
-                width: 172,
+                width: 260,
                 height: 48,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                my: 2,
               }}
             >
               LOGO
@@ -79,12 +81,12 @@ export default function SearchAppBar() {
                 display: "flex",
                 justifyContent: "flex-start",
                 width: "100%",
-                ml: 8,
+                ml: 6,
               }}
             >
               <Search
                 sx={{
-                  width: { sm: "40%", md: "60%", lg: "80%" },
+                  width: { sm: "40%", md: "60%", lg: "70%" },
                   display: "flex",
                 }}
               >
@@ -106,10 +108,16 @@ export default function SearchAppBar() {
                   alignItems: "center",
                 }}
               >
-                <IconButton color="inherit" aria-label="menu">
-                  <Person2Outlined />
-                </IconButton>
-                <Typography noWrap>Sign in</Typography>
+                <Button
+                  color="inherit"
+                  aria-label="menu"
+                  startIcon={
+                    <Person2Outlined style={{ transform: "scale(1.5)" }} />
+                  }
+                  sx={{ textTransform: "none", whiteSpace: "nowrap" }}
+                >
+                  Sign in
+                </Button>
               </Box>
 
               <Box
@@ -119,10 +127,18 @@ export default function SearchAppBar() {
                   alignItems: "center",
                 }}
               >
-                <IconButton color="inherit" aria-label="menu">
-                  <ShoppingBagOutlinedIcon />
-                </IconButton>
-                <Typography noWrap>Cart</Typography>
+                <Button
+                  color="inherit"
+                  aria-label="menu"
+                  startIcon={
+                    <ShoppingBagOutlinedIcon
+                      style={{ transform: "scale(1.5)" }}
+                    />
+                  }
+                  sx={{ textTransform: "none", whiteSpace: "nowrap" }}
+                >
+                  Cart
+                </Button>
               </Box>
             </Box>
           </Toolbar>

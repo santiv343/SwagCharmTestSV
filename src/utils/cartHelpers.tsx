@@ -27,6 +27,7 @@ export const renderDetails = (details: any) => {
               alignItems: "center",
               display: "flex",
               mr: 1,
+              fontSize: 14,
             }}
           >
             {propName}

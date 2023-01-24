@@ -21,9 +21,10 @@ export default function CartItems({
         <b>Your Cart </b>
         {`(${productCount})`}
       </Typography>
-      <Box sx={{ display: "flex", flexDirection: "column"}}>
-        {products.map((product: any) => (
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        {products.map((product: any, index: number) => (
           <CartCard
+            key={"cartCard" + index}
             product={product}
             removeItem={removeItem}
             editQuantity={editQuantity}
