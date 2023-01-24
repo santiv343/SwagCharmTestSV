@@ -16,7 +16,7 @@ export const getTotalPrice = (items: ProductsType) => {
   }, 0);
 };
 
-export const renderDetails = (details: string[]) => {
+export const renderDetails = (details: { [key: string]: string }[]) => {
   const detailsList = details.map((detail) => {
     const propName = Object.getOwnPropertyNames(detail)[0];
     return (

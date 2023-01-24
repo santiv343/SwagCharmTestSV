@@ -3,12 +3,11 @@ import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Person2Outlined } from "@mui/icons-material";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import { Button, Container, Typography } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import Logo from "./Logo";
 
 const Search = styled("div")(({ theme }) => ({

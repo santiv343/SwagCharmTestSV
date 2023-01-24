@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import SocialColumn from "./SocialColumn";
-import { infoColumns } from "../../utils/constants";
 import { getInfoColumns } from "../../utils/footerHelpers";
 import { ChevronLeftOutlined } from "@mui/icons-material";
 import FlagIcon from "../FlagIcon";
