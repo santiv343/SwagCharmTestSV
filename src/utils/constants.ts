@@ -66,3 +66,18 @@ export const featuredProducts = [
     minimum: 24,
   },
 ];
+
+export const infoColumns = [
+  {
+    title: "Our company",
+    links: ["About us", "FAQ", "Partnerships", "Sustainability", "Blog"],
+  },
+  {
+    title: "How can we help",
+    links: ["Place a ticket", "Track your order", "Help center"],
+  },
+  {
+    title: "Information",
+    links: ["Contact us", "Live chat", "Privacy", "Terms of use"],
+  },
+];

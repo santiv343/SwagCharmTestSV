@@ -6,6 +6,7 @@ import ButtonBar from "./components/Navigation/ButtonBar";
 import Cart from "./components/Cart/Cart";
 import useStore from "./utils/hooks/useStore";
 import { buttonNames } from "./utils/constants";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { editQuantity, removeItem, items, total } = useStore();
@@ -22,6 +23,7 @@ function App() {
           editQuantity={editQuantity}
         />
       </Container>
+      <Footer />
     </>
   );
 }

@@ -21,8 +21,11 @@ const FeaturedProducts = ({ products }: any) => {
             gap: 2,
           }}
         >
-          {products.map((product: any) => (
-            <FeaturedProduct product={product} />
+          {products.map((product: any, index: number) => (
+            <FeaturedProduct
+              key={"featuredProduct" + index}
+              product={product}
+            />
           ))}
         </Box>
       </Box>

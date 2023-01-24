@@ -9,6 +9,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Person2Outlined } from "@mui/icons-material";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { Button, Container, Typography } from "@mui/material";
+import Logo from "./Logo";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -61,20 +62,7 @@ export default function SearchAppBar() {
               p: { md: 0, lg: 0 },
             }}
           >
-            <Box
-              sx={{
-                bgcolor: "secondary.200",
-                color: "#848A92",
-                width: 260,
-                height: 48,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                my: 2,
-              }}
-            >
-              LOGO
-            </Box>
+            <Logo />
 
             <Box
               sx={{
